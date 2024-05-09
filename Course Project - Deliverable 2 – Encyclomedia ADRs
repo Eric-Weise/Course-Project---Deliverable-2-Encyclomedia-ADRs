@@ -1,0 +1,78 @@
+# ADR 1: Audio/Visual Processing
+
+### Decision
+We will design our own JSON data structures containing visual patterns and transcribe audio into text that will be used to query the database when a user initiates a recording or search.
+
+### Rationale
+To effectively identify and query media content, it's crucial to structure the data into a format that can be understood by the database or sent over an API. This approach will facilitate efficient performance and enable seamless integration with the application's functionalities.
+
+### Status
+Accepted
+
+### Consequences
+- The input for the matching algorithm will depend on the success of the audio/visual processing, which may impact the accuracy of query results.
+- Failure to process the input into usable data may lead to inaccurate query results or no results at all.
+
+
+# ADR 2: Database Design
+
+### Decision
+We will use a relational database to store metadata and a NoSQL database to store user information, optimizing data storage and retrieval for both structured and unstructured data.
+
+### Rationale
+A relational database offers efficient storage and retrieval of large amounts of structured data, which is essential for storing media metadata. On the other hand, a NoSQL database provides scalability and flexibility for storing user information without the need for predefined schemas.
+
+### Status
+Proposed
+
+### Consequences
+- The proposed database architecture aims to ensure data consistency, integrity, and scalability, with predictable costs for database management.
+- Adoption of this architecture may require additional resources for implementation and maintenance.
+
+
+# ADR 3: Matching Algorithm
+
+### Decision
+We will design our own algorithm to match the user’s input data to our database based on our metadata design patterns.
+
+### Rationale
+The matching algorithm is the core functionality of the application, crucial for accurately retrieving information about media content from user queries. Designing a proprietary algorithm ensures control over performance and accuracy, which are essential for user satisfaction.
+
+### Status
+Accepted
+
+### Consequences
+- The success of the application depends heavily on the effectiveness and efficiency of the matching algorithm.
+- Failure to deliver accurate results or prolonged response times may lead to user dissatisfaction and loss of market competitiveness.
+
+
+# ADR 4: User Interface
+
+### Decision
+We will design a user interface similar to the Shazam app, featuring a main page for activating recording sessions and an option to upload pre-recorded media files.
+
+### Rationale
+A user-friendly interface plays a vital role in attracting and retaining users. By emulating the design of successful applications like Shazam, we aim to provide a seamless and intuitive user experience that aligns with user expectations.
+
+### Status
+Proposed
+
+### Consequences
+- A well-designed user interface can enhance user engagement and perception of application functionality.
+- Poor user interface design may lead to user frustration and decreased adoption rates.
+
+
+# ADR 5: Scalability and Performance
+
+### Decision
+We will utilize cloud storage with built-in scalability and high throughput performance to handle the anticipated growth in user traffic and data volume.
+
+### Rationale
+Given the expected increase in concurrent users and data volume, scalability and performance are critical factors for ensuring optimal user experience. Cloud storage offers the flexibility and resources required to accommodate these demands.
+
+### Status
+Accepted
+
+### Consequences
+- Effective scalability and performance measures are essential for maintaining application stability and responsiveness.
+- Inadequate scalability or performance issues may result in user dissatisfaction and negative reviews, impacting the application's reputation and market viability.
